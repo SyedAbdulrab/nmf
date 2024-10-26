@@ -3,7 +3,7 @@
     <!-- Header -->
     <header class="header">
       <div class="nav container">
-        <div class="logo">National Music Festival</div>
+        <div class="logo">NMF.</div>
         <div class="nav-links" :class="{ 'nav-active': menuActive }">
           <a href="#home" @click="scrollToSection('home')">Home</a>
           <a href="#schedule" @click="scrollToSection('schedule')">Event Schedule</a>
@@ -22,12 +22,12 @@
     <!-- Hero Section -->
     <section class="hero" id="home">
       <div class="overlay">
-        <h1>دل کی دھڑکنوں کو <span class="orange">موسیقی</span> کے ساتھ ملائیں</h1>
+        <h1 id="hero-heading">دل کی دھڑکنوں کو <span class="orange">موسیقی</span> کے ساتھ ملائیں</h1>
         <h2>National Music Festival 2024</h2>
         <p>NUST, H-12, Islamabad | 13-15 December 2024</p>
         <a href="https://docs.google.com/forms/d/e/1FAIpQLSewJKQbnhNKDRAmlVwEbYqJF4P2pIZWu5h9x2VLkY6AA9A-yw/viewform?usp=sf_link">
-        <button class="register-btn">Buy Tickets</button>
-      </a>
+          <button class="register-btn">Buy Tickets</button>
+        </a>
         <div class="countdown">
           <div>
             <span>{{ days }}</span>
@@ -95,14 +95,11 @@
       </div>
     </section>
 
-        <!-- Participation Section -->
-        <section class="participation" id="participation">
+    <!-- Participation Section -->
+    <section class="participation" id="participation">
       <h2>
-<span class="orange">        موسیقی
-  کے میلے
-
-</span>
-         کا حصہ بنیں</h2>
+        <span class="orange">موسیقی کے میلے</span> کا حصہ بنیں
+      </h2>
       <p>Are you an artist, musician, or performer looking to showcase your talent?</p>
       <p>Join us at the National Music Festival 2024!</p>
       <a href="https://docs.google.com/forms/d/e/1FAIpQLSfiUXOCB_fd06rYBHMrMCsT6-BfY7Mje5BNVH8R_CGdlunvWA/viewform?usp=sf_link" target="_blank" class="participate-btn">Participate Now</a>
@@ -142,31 +139,18 @@
     <!-- Registration Section -->
     <section class="registration" id="registration">
       <div class="overlay">
-        <h2>
-Get your tickets Now
-        </h2>
+        <h2>Get your tickets Now</h2>
         <h3>
-<span class="orange">          موسیقی کے میلے
-</span>
-          کا حصہ بنیں
+          <span class="orange">موسیقی کے میلے</span> کا حصہ بنیں
         </h3>
         <p>
-Become a part of the greatest music festival that NUST has ever witnessed since ON'21. Let's make history together!
+          Become a part of the greatest music festival that NUST has ever witnessed since ON'21. Let's make history together!
         </p>
         <a href="https://docs.google.com/forms/d/e/1FAIpQLSewJKQbnhNKDRAmlVwEbYqJF4P2pIZWu5h9x2VLkY6AA9A-yw/viewform?usp=sf_link" target="_blank">
-          <button class="register-btn">
-Get tickets        </button>
+          <button class="register-btn">Get tickets</button>
         </a>
       </div>
     </section>
-
-    <!-- Contact Section
-    <section class="contact" id="contact">
-      <h2>Contact Us</h2>
-      <p>If you have any questions, feel free to reach out to us.</p>
-      <p>Email: info@musicfestival.pk</p>
-      <p>Phone: +92 123 4567890</p>
-    </section> -->
 
     <!-- Footer -->
     <footer>
@@ -199,14 +183,6 @@ Get tickets        </button>
             <li><i class="fas fa-map-marker-alt"></i> NUST, H-12, Islamabad</li>
           </ul>
         </div>
-        <!-- <div class="footer-newsletter">
-          <h3>Newsletter</h3>
-          <p>Subscribe to our newsletter to get the latest updates.</p>
-          <form @submit.prevent="subscribeNewsletter">
-            <input type="email" v-model="newsletterEmail" placeholder="Enter your email" required>
-            <button type="submit">Subscribe</button>
-          </form>
-        </div> -->
       </div>
       <div class="footer-bottom">
         <p>© 2024 National Music Festival. All rights reserved.</p>
@@ -476,67 +452,6 @@ body {
   }
   .mobile-register-btn {
     display: block;
-}
-
-/* Adjustments for smaller screens */
-  .hero h1 {
-    font-size: 2.5rem;
-  }
-
-  .hero h2 {
-    font-size: 1.8rem;
-  }
-
-  .hero p {
-    font-size: 1rem;
-  }
-
-  .hero .countdown div {
-    padding: 0.5rem 1rem;
-  }
-
-  .features {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .feature-box {
-    flex: 1 1 100%;
-    margin: 1rem 0;
-  }
-
-  /* Responsive Carousel */
-  .carousel-slide {
-    height: 300px;
-  }
-
-  .carousel-text p {
-    font-size: 1rem;
-  }
-
-  .footer-container {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .footer-about,
-  .footer-links,
-  .footer-contact,
-  .footer-newsletter {
-    margin: 1rem 0;
-  }
-
-  .footer-newsletter form {
-    flex-direction: column;
-  }
-
-  .footer-newsletter input[type="email"] {
-    border-radius: 5px;
-    margin-bottom: 1rem;
-  }
-
-  .footer-newsletter button {
-    border-radius: 5px;
   }
 }
 
@@ -622,25 +537,25 @@ body {
 }
 
 .hero h1 {
-  font-size: 3.5rem;
+  font-size: calc(2rem + 2vw);
   margin-bottom: 1rem;
   animation: fadeInDown 1s forwards;
 }
 
 .hero h2 {
-  font-size: 2.5rem;
+  font-size: calc(1.5rem + 1vw);
   margin-bottom: 1rem;
   animation: fadeInDown 1.5s forwards;
 }
 
 .hero p {
-  font-size: 1.5rem;
+  font-size: calc(1rem + 0.5vw);
   margin-bottom: 2rem;
   animation: fadeInDown 2s forwards;
 }
 
 .hero .register-btn {
-  font-size: 1.2rem;
+  font-size: calc(1rem + 0.5vw);
   animation: fadeInDown 2.5s forwards;
 }
 
@@ -680,13 +595,13 @@ body {
 }
 
 .countdown span {
-  font-size: 2.5rem;
+  font-size: calc(2rem + 1vw);
   font-weight: bold;
   display: block;
 }
 
 .countdown p {
-  font-size: 1rem;
+  font-size: calc(0.8rem + 0.3vw);
 }
 
 /* Why Join Section */
@@ -696,7 +611,7 @@ body {
 }
 
 .why-join h2 {
-  font-size: 2.5rem;
+  font-size: calc(2rem + 1vw);
   margin-bottom: 3rem;
 }
 
@@ -739,12 +654,12 @@ body {
 
 .feature-box h3 {
   margin-bottom: 1rem;
-  font-size: 1.5rem;
+  font-size: calc(1.2rem + 0.5vw);
   color: #ff6f61;
 }
 
 .feature-box p {
-  font-size: 1rem;
+  font-size: calc(0.9rem + 0.3vw);
 }
 
 /* Gallery Section */
@@ -755,7 +670,7 @@ body {
 }
 
 .gallery h2 {
-  font-size: 2.5rem;
+  font-size: calc(2rem + 1vw);
   margin-bottom: 2rem;
 }
 
@@ -785,7 +700,7 @@ body {
 
 .carousel-text p {
   color: #fff;
-  font-size: 1.5rem;
+  font-size: calc(1rem + 0.5vw);
 }
 
 .carousel-controls {
@@ -800,7 +715,7 @@ body {
 .carousel-controls .prev,
 .carousel-controls .next {
   cursor: pointer;
-  font-size: 2rem;
+  font-size: calc(1.5rem + 1vw);
   color: #fff;
   padding: 0 1rem;
   user-select: none;
@@ -836,7 +751,7 @@ body {
 }
 
 .schedule h2 {
-  font-size: 2.5rem;
+  font-size: calc(2rem + 1vw);
   margin-bottom: 3rem;
 }
 
@@ -853,7 +768,7 @@ body {
 }
 
 .day h3 {
-  font-size: 2rem;
+  font-size: calc(1.5rem + 0.5vw);
   margin-bottom: 1rem;
   color: #ff6f61;
 }
@@ -886,12 +801,12 @@ body {
 }
 
 .participation h2 {
-  font-size: 2.5rem;
+  font-size: calc(2rem + 1vw);
   margin-bottom: 1.5rem;
 }
 
 .participation p {
-  font-size: 1.2rem;
+  font-size: calc(1rem + 0.5vw);
   margin-bottom: 1rem;
 }
 
@@ -902,7 +817,7 @@ body {
   color: #fff;
   text-decoration: none;
   border-radius: 5px;
-  font-size: 1.2rem;
+  font-size: calc(1rem + 0.3vw);
   transition: background-color 0.3s ease;
 }
 
@@ -937,18 +852,18 @@ body {
 }
 
 .registration h2 {
-  font-size: 3rem;
+  font-size: calc(2.5rem + 1vw);
   margin-bottom: 1rem;
   color: #ff6f61;
 }
 
 .registration h3 {
-  font-size: 2rem;
+  font-size: calc(1.8rem + 0.5vw);
   margin-bottom: 1.5rem;
 }
 
 .registration p {
-  font-size: 1.2rem;
+  font-size: calc(1rem + 0.5vw);
   margin-bottom: 2rem;
   max-width: 600px;
   margin-left: auto;
@@ -956,7 +871,7 @@ body {
 }
 
 .registration .register-btn {
-  font-size: 1.5rem;
+  font-size: calc(1rem + 0.5vw);
   padding: 0.75rem 2rem;
   background-color: #ff6f61;
   border: none;
@@ -974,23 +889,6 @@ body {
 .registration, .registration .overlay {
   position: relative;
   z-index: 1;
-}
-
-/* Contact Section */
-.contact {
-  padding: 4rem 0;
-  text-align: center;
-  background-color: #f9f9f9;
-}
-
-.contact h2 {
-  font-size: 2.5rem;
-  margin-bottom: 2rem;
-}
-
-.contact p {
-  font-size: 1.2rem;
-  margin-bottom: 1rem;
 }
 
 /* Footer */
@@ -1016,12 +914,12 @@ footer {
 }
 
 .footer-about h2 {
-  font-size: 1.8rem;
+  font-size: calc(1.5rem + 0.5vw);
   margin-bottom: 1rem;
 }
 
 .footer-about p {
-  font-size: 1rem;
+  font-size: calc(0.9rem + 0.3vw);
   max-width: 300px;
   margin-bottom: 1rem;
 }
@@ -1038,7 +936,7 @@ footer {
 
 .social-icons li a {
   color: #fff;
-  font-size: 1.5rem;
+  font-size: calc(1.2rem + 0.3vw);
   transition: color 0.3s;
 }
 
@@ -1049,7 +947,7 @@ footer {
 .footer-links h3,
 .footer-contact h3,
 .footer-newsletter h3 {
-  font-size: 1.5rem;
+  font-size: calc(1.2rem + 0.3vw);
   margin-bottom: 1rem;
 }
 
@@ -1082,7 +980,7 @@ footer {
 }
 
 .footer-newsletter p {
-  font-size: 1rem;
+  font-size: calc(0.9rem + 0.3vw);
   margin-bottom: 1rem;
 }
 
@@ -1095,7 +993,7 @@ footer {
   padding: 0.5rem;
   border: none;
   border-radius: 5px 0 0 5px;
-  font-size: 1rem;
+  font-size: calc(0.9rem + 0.3vw);
 }
 
 .footer-newsletter button {
@@ -1105,7 +1003,7 @@ footer {
   border: none;
   border-radius: 0 5px 5px 0;
   cursor: pointer;
-  font-size: 1rem;
+  font-size: calc(0.9rem + 0.3vw);
 }
 
 .footer-newsletter button:hover {
@@ -1116,7 +1014,7 @@ footer {
   background-color: #111;
   text-align: center;
   padding: 1rem 0;
-  font-size: 0.9rem;
+  font-size: calc(0.8rem + 0.2vw);
 }
 
 .footer-bottom p {
@@ -1124,7 +1022,19 @@ footer {
 }
 
 /* Responsive Styles */
+@media (max-width: 1200px) {
+  #hero-heading{
+    padding-top: 5rem;
+  }
+  .feature-box {
+    flex: 1 1 calc(50% - 2rem);
+  }
+}
+
 @media (max-width: 768px) {
+  #hero-heading{
+    padding-top: 6rem;
+  }
   .nav {
     flex-wrap: wrap;
   }
@@ -1140,6 +1050,134 @@ footer {
 
   .nav-links.nav-active {
     display: flex;
+  }
+
+  .features {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .feature-box {
+    flex: 1 1 100%;
+    margin: 1rem 0;
+  }
+
+  .footer-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .footer-about,
+  .footer-links,
+  .footer-contact,
+  .footer-newsletter {
+    margin: 1rem 0;
+  }
+
+  .footer-newsletter form {
+    flex-direction: column;
+  }
+
+  .footer-newsletter input[type="email"] {
+    border-radius: 5px;
+    margin-bottom: 1rem;
+  }
+
+  .footer-newsletter button {
+    border-radius: 5px;
+  }
+
+  .carousel-slide {
+    height: 300px;
+  }
+
+  .countdown {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .countdown div {
+    padding: 0.5rem 1rem;
+  }
+
+  .day ul li {
+    font-size: calc(0.9rem + 0.3vw);
+  }
+}
+
+
+
+@media (max-width: 480px) {
+  .hero h1 {
+    font-size: calc(1.8rem + 2vw);
+  }
+  #hero-heading{
+    padding-top: 10rem;
+  }
+
+
+  .hero h2 {
+    font-size: calc(1.2rem + 1vw);
+  }
+
+  .hero p {
+    font-size: calc(0.9rem + 0.5vw);
+  }
+
+  .feature-box h3 {
+    font-size: calc(1rem + 0.5vw);
+  }
+
+  .feature-box p {
+    font-size: calc(0.8rem + 0.3vw);
+  }
+
+  .carousel-text p {
+    font-size: calc(0.9rem + 0.5vw);
+  }
+
+  .day h3 {
+    font-size: calc(1.2rem + 0.5vw);
+  }
+
+  .participation h2 {
+    font-size: calc(1.5rem + 1vw);
+  }
+
+  .participation p {
+    font-size: calc(0.9rem + 0.5vw);
+  }
+
+  .participate-btn {
+    font-size: calc(0.9rem + 0.3vw);
+  }
+
+  .registration h2 {
+    font-size: calc(2rem + 1vw);
+  }
+
+  .registration h3 {
+    font-size: calc(1.5rem + 0.5vw);
+  }
+
+  .registration p {
+    font-size: calc(0.9rem + 0.5vw);
+  }
+
+  .registration .register-btn {
+    font-size: calc(0.9rem + 0.5vw);
+  }
+
+  .footer-about h2,
+  .footer-links h3,
+  .footer-contact h3 {
+    font-size: calc(1.2rem + 0.5vw);
+  }
+
+  .footer-about p,
+  .footer-contact ul li,
+  .footer-links ul li a {
+    font-size: calc(0.8rem + 0.3vw);
   }
 }
 </style>
