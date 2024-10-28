@@ -3,7 +3,10 @@
     <!-- Header -->
     <header class="header">
       <div class="nav container">
-        <div class="logo">NMFF.</div>
+        <div class="logo">
+          <img :src="logoImage" alt="NMFF Logo" />
+        </div>
+
         <div class="nav-links" :class="{ 'nav-active': menuActive }">
           <a href="#home" @click="scrollToSection('home')">Home</a>
           <a href="#schedule" @click="scrollToSection('schedule')">Event Schedule</a>
@@ -23,8 +26,8 @@
     <section class="hero" id="home">
       <div class="overlay">
         <h1 id="hero-heading">دل کی دھڑکنوں کو <span class="orange">موسیقی</span> کے ساتھ ملائیں</h1>
-        <h2>National Music Festival 2024</h2>
-        <p>NUST, H-12, Islamabad | 13-15 December 2024</p>
+        <h2>National Music Festival 2.0</h2>
+        <p>NUST, H-12, Islamabad | 28-29 November 2024</p>
         <a href="https://docs.google.com/forms/d/e/1FAIpQLSewJKQbnhNKDRAmlVwEbYqJF4P2pIZWu5h9x2VLkY6AA9A-yw/viewform?usp=sf_link">
           <button class="register-btn">Buy Tickets</button>
         </a>
@@ -54,24 +57,27 @@
       <h2>Why You Should Join</h2>
       <div class="features container">
         <div class="feature-box">
-          <img src="https://images.unsplash.com/photo-1514320291840-2e0a9bf2a9ae?q=80&w=3540&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Live Performances">
+          <img src="https://t4.ftcdn.net/jpg/06/83/48/05/360_F_683480571_leNz6IF9RQ3GtmNO9dl8RuLAreTa4CZ5.jpg" alt="Live Performances">
           <h3>Live Performances</h3>
-          <p>Enjoy electrifying performances from top artists and bands.</p>
+          <p>Enjoy electrifying performances from upcoming artists and bands.</p>
         </div>
         <div class="feature-box">
-          <img src="https://images.unsplash.com/photo-1514320291840-2e0a9bf2a9ae?q=80&w=3540&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Music Workshops">
-          <h3>Music Workshops</h3>
-          <p>Participate in workshops and learn from industry professionals.</p>
+          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR4TVsSSg_dMzV4ZrJrpBlPgl_otZim5sIv_tc7eBdU60vMVysLS6kO7F2jWrzlnNnxrhs&usqp=CAU" alt="Music Workshops">
+          <h3>Competitions</h3>
+          <p>Test your talent infront of renowned artists and make your mark in the field.
+
+</p>
         </div>
         <div class="feature-box">
-          <img src="https://images.unsplash.com/photo-1514320291840-2e0a9bf2a9ae?q=80&w=3540&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Networking">
+          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcScTBBcH1izkY2TuQZft1_cQrTvsLY4m1xNenuMU3f7t6PqjGVPY3mNsW9ri8NVy0xzs-U&usqp=CAU" alt="Networking">
           <h3>Networking</h3>
           <p>Connect with fellow music enthusiasts and expand your network.</p>
         </div>
         <div class="feature-box">
-          <img src="https://images.unsplash.com/photo-1514320291840-2e0a9bf2a9ae?q=80&w=3540&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Food & Fun">
-          <h3>Food & Fun</h3>
-          <p>Indulge in delicious food and enjoy various fun activities.</p>
+          <img src="https://melodystudio.net/wp-content/uploads/2023/07/MelodyStudio-Blog-What-You-Must-Know-Before-Joining-a-Pro-Jam-Session.jpg" alt="Food & Fun">
+          <h3>Jamming Sessions</h3>
+          <p>
+Engage in the most iconic gatherings with fellow musicians in NUST's magestic atmosphere.</p>
         </div>
       </div>
     </section>
@@ -79,20 +85,22 @@
     <!-- Gallery Section -->
     <section class="gallery" id="gallery">
       <h2>موسیقی کے <span class="orange">رنگ</span></h2>
-      <div class="carousel">
-        <div class="carousel-slide" :style="{ backgroundImage: 'url(' + images[currentImage].url + ')' }">
-          <div class="carousel-text">
-            <p>{{ images[currentImage].text }}</p>
+      <h2 style="text-align: center; margin-top: 2rem; font-size: 2rem">Highlights from  <span class="orange">NMF 1.0</span></h2>
+       <div class="carousel">
+          <div class="carousel-slide" :style="{ backgroundImage: 'url(' + images[currentImage].url + ')' }">
+            <div class="carousel-text">
+              <p>{{ images[currentImage].text }}</p>
+            </div>
+          </div>
+          <div class="carousel-controls">
+            <span class="prev" @click="prevImage">&#10094;</span>
+            <span class="next" @click="nextImage">&#10095;</span>
+          </div>
+          <div class="carousel-indicators">
+            <span v-for="(image, index) in images" :key="index" :class="{ active: currentImage === index }" @click="goToImage(index)"></span>
           </div>
         </div>
-        <div class="carousel-controls">
-          <span class="prev" @click="prevImage">&#10094;</span>
-          <span class="next" @click="nextImage">&#10095;</span>
-        </div>
-        <div class="carousel-indicators">
-          <span v-for="(image, index) in images" :key="index" :class="{ active: currentImage === index }" @click="goToImage(index)"></span>
-        </div>
-      </div>
+
     </section>
 
     <!-- Participation Section -->
@@ -103,6 +111,7 @@
       <p>Are you an artist, musician, or performer looking to showcase your talent?</p>
       <p>Join us at the National Music Festival 2024!</p>
       <a href="https://docs.google.com/forms/d/e/1FAIpQLSfiUXOCB_fd06rYBHMrMCsT6-BfY7Mje5BNVH8R_CGdlunvWA/viewform?usp=sf_link" target="_blank" class="participate-btn">Participate Now</a>
+      <p style="margin-top: 12px;font-size: 14px">Students from any institution in Pakistan can register</p>
     </section>
 
     <!-- Schedule Section -->
@@ -110,27 +119,21 @@
       <h2>Event Schedule</h2>
       <div class="days container">
         <div class="day">
-          <h3>Day 1 - Dec 13, 2024</h3>
+          <h3>Day 1 (November 28th, 2024)</h3>
           <ul>
-            <li><strong>Opening Ceremony</strong> - Special Guest Appearance</li>
-            <li><strong>Rock Concert</strong> - Featuring Local Bands</li>
-            <li><strong>DJ Night</strong> - Dance to the Beats</li>
+            <li><strong>Song Association (1000 – 1300 hrs.)</strong> - Teams will compete in a fun, word-based song game to engage the audience.
+</li>
+            <li><strong>Eastern Singing Competition (1300 – 1700 hrs.)</strong> - A showcase of vocal talent in Eastern music, judged by renowned professionals.</li>
+            <li><strong>Western Singing Competition (1700 – 2100 hrs.)</strong> - Participants will perform Western songs, with expert judges selecting winners.
+</li>
           </ul>
         </div>
         <div class="day">
-          <h3>Day 2 - Dec 14, 2024</h3>
+          <h3>Day 2 (November 29th, 2024)</h3>
           <ul>
-            <li><strong>Classical Performances</strong> - Renowned Musicians</li>
-            <li><strong>Music Workshops</strong> - Learn and Grow</li>
-            <li><strong>Battle of the Bands</strong> - Witness Talent</li>
-          </ul>
-        </div>
-        <div class="day">
-          <h3>Day 3 - Dec 15, 2024</h3>
-          <ul>
-            <li><strong>Grand Finale Concert</strong> - International Artists</li>
-            <li><strong>Awards Ceremony</strong> - Honoring Excellence</li>
-            <li><strong>Closing Ceremony</strong> - Fireworks Display</li>
+            <li><strong>Instrumental Competition (1000 – 1200 hrs.)</strong> - A platform for musicians to perform solo pieces on their favourite songs.
+</li>
+            <li><strong>Battle of the Bands x Rave (1500 – 2100 hrs.)</strong> - The biggest event of the festival featuring 15 university bands, culminating in a final round with a grand prize for the winner, followed by a closing rave.</li>
           </ul>
         </div>
       </div>
@@ -149,6 +152,9 @@
         <a href="https://docs.google.com/forms/d/e/1FAIpQLSewJKQbnhNKDRAmlVwEbYqJF4P2pIZWu5h9x2VLkY6AA9A-yw/viewform?usp=sf_link" target="_blank">
           <button class="register-btn">Get tickets</button>
         </a>
+        <p style="margin-top: 12px;font-size: 14px">
+          Only NUSTians are allowed!
+        </p>
       </div>
     </section>
 
@@ -178,8 +184,8 @@
         <div class="footer-contact">
           <h3>Contact Us</h3>
           <ul>
-            <li><i class="fas fa-envelope"></i> info@musicfestival.pk</li>
-            <li><i class="fas fa-phone"></i> +92 123 4567890</li>
+            <li><i class="fas fa-envelope"></i> nustmusicsociety23@gmail.com</li>
+            <li><i class="fas fa-phone"></i> +92 331 5888763</li>
             <li><i class="fas fa-map-marker-alt"></i> NUST, H-12, Islamabad</li>
           </ul>
         </div>
@@ -196,35 +202,33 @@ export default {
   name: "App",
   data() {
     return {
+    logoImage: require('@/assets/logoNMF.png'),
       days: 0,
       hours: 0,
       minutes: 0,
       seconds: 0,
-      eventDate: new Date('December 13, 2024 00:00:00').getTime(),
+      eventDate: new Date('November 28, 2024 00:00:00').getTime(),
       menuActive: false,
       // Carousel Data
       images: [
-        {
-          url: 'https://images.unsplash.com/photo-1514320291840-2e0a9bf2a9ae?q=80&w=3540&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
-          text: 'دل چھو لینے والی دھنیں',
-        },
-        {
-          url: 'https://images.unsplash.com/photo-1514320291840-2e0a9bf2a9ae?q=80&w=3540&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
-          text: 'سر اور تال کا سنگم',
-        },
-        {
-          url: 'https://images.unsplash.com/photo-1514320291840-2e0a9bf2a9ae?q=80&w=3540&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
-          text: 'آواز کی جادوگری',
-        },
-        {
-          url: 'https://images.unsplash.com/photo-1514320291840-2e0a9bf2a9ae?q=80&w=3540&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
-          text: 'دھڑکنوں کی تال پر',
-        },
-        {
-          url: 'https://images.unsplash.com/photo-1514320291840-2e0a9bf2a9ae?q=80&w=3540&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
-          text: 'موسیقی کی دنیا میں خوش آمدید',
-        },
-      ],
+      {
+        url: require('@/assets/nmf1.png'),
+        text: 'دل چھو لینے والی دھنیں'
+      },
+      {
+        url: require('@/assets/nmf3.png'),
+        text: 'آواز کی جادوگری'
+      },
+      {
+        url: require('@/assets/nmf4.png'),
+        text: 'دھڑکنوں کی تال پر'
+      },
+      {
+        url: require('@/assets/nmf5.png'),
+        text: 'موسیقی کی دنیا میں خوش آمدید'
+      }
+    ],
+
       currentImage: 0,
       // Newsletter Data
       newsletterEmail: '',
@@ -360,6 +364,7 @@ body {
   top: 0;
   z-index: 1000;
   box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  width: 100%;
 }
 
 .nav {
@@ -370,10 +375,14 @@ body {
 }
 
 .logo {
-  font-size: 1.8rem;
   color: #ff6f61;
   font-weight: 700;
 }
+.logo img {
+  width: 20rem; /* Adjust to desired width */
+  height: auto; /* Keeps the aspect ratio */
+}
+
 
 .nav-links {
   display: flex;
@@ -683,7 +692,7 @@ body {
 
 .carousel-slide {
   width: 100%;
-  height: 500px;
+  height: 700px;
   background-size: cover;
   background-position: center;
   position: relative;
