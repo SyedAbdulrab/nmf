@@ -3,7 +3,7 @@
     <!-- Header -->
     <header class="header">
       <div class="nav container">
-        <div class="logo">NMF.</div>
+        <div class="logo">NMFF.</div>
         <div class="nav-links" :class="{ 'nav-active': menuActive }">
           <a href="#home" @click="scrollToSection('home')">Home</a>
           <a href="#schedule" @click="scrollToSection('schedule')">Event Schedule</a>
