@@ -4,7 +4,10 @@
     <header class="header">
       <div class="nav container">
         <div class="logo">
-          <img :src="logoImage" alt="NMFF Logo" />
+          <!-- Logo Image -->
+          <img :src="logoImage" alt="NMFF Logo" class="logo-image" />
+          <!-- Logo Text -->
+          <span class="logo-text">NMF</span>
         </div>
 
         <div class="nav-links" :class="{ 'nav-active': menuActive }">
@@ -36,15 +39,15 @@
             <span>{{ days }}</span>
             <p>Days</p>
           </div>
-          <div>
+          <div >
             <span>{{ hours }}</span>
             <p>Hours</p>
           </div>
-          <div>
+          <div class="none-sm">
             <span>{{ minutes }}</span>
             <p>Minutes</p>
           </div>
-          <div>
+          <div class="none-sm">
             <span>{{ seconds }}</span>
             <p>Seconds</p>
           </div>
@@ -64,9 +67,7 @@
         <div class="feature-box">
           <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR4TVsSSg_dMzV4ZrJrpBlPgl_otZim5sIv_tc7eBdU60vMVysLS6kO7F2jWrzlnNnxrhs&usqp=CAU" alt="Music Workshops">
           <h3>Competitions</h3>
-          <p>Test your talent infront of renowned artists and make your mark in the field.
-
-</p>
+          <p>Test your talent in front of renowned artists and make your mark in the field.</p>
         </div>
         <div class="feature-box">
           <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcScTBBcH1izkY2TuQZft1_cQrTvsLY4m1xNenuMU3f7t6PqjGVPY3mNsW9ri8NVy0xzs-U&usqp=CAU" alt="Networking">
@@ -77,7 +78,8 @@
           <img src="https://melodystudio.net/wp-content/uploads/2023/07/MelodyStudio-Blog-What-You-Must-Know-Before-Joining-a-Pro-Jam-Session.jpg" alt="Food & Fun">
           <h3>Jamming Sessions</h3>
           <p>
-Engage in the most iconic gatherings with fellow musicians in NUST's magestic atmosphere.</p>
+            Engage in the most iconic gatherings with fellow musicians in NUST's majestic atmosphere.
+          </p>
         </div>
       </div>
     </section>
@@ -86,21 +88,20 @@ Engage in the most iconic gatherings with fellow musicians in NUST's magestic at
     <section class="gallery" id="gallery">
       <h2>موسیقی کے <span class="orange">رنگ</span></h2>
       <h2 style="text-align: center; margin-top: 2rem; font-size: 2rem">Highlights from  <span class="orange">NMF 1.0</span></h2>
-       <div class="carousel">
-          <div class="carousel-slide" :style="{ backgroundImage: 'url(' + images[currentImage].url + ')' }">
-            <div class="carousel-text">
-              <p>{{ images[currentImage].text }}</p>
-            </div>
-          </div>
-          <div class="carousel-controls">
-            <span class="prev" @click="prevImage">&#10094;</span>
-            <span class="next" @click="nextImage">&#10095;</span>
-          </div>
-          <div class="carousel-indicators">
-            <span v-for="(image, index) in images" :key="index" :class="{ active: currentImage === index }" @click="goToImage(index)"></span>
+      <div class="carousel">
+        <div class="carousel-slide" :style="{ backgroundImage: 'url(' + images[currentImage].url + ')' }">
+          <div class="carousel-text">
+            <p>{{ images[currentImage].text }}</p>
           </div>
         </div>
-
+        <div class="carousel-controls">
+          <span class="prev" @click="prevImage">&#10094;</span>
+          <span class="next" @click="nextImage">&#10095;</span>
+        </div>
+        <div class="carousel-indicators">
+          <span v-for="(image, index) in images" :key="index" :class="{ active: currentImage === index }" @click="goToImage(index)"></span>
+        </div>
+      </div>
     </section>
 
     <!-- Participation Section -->
@@ -121,18 +122,15 @@ Engage in the most iconic gatherings with fellow musicians in NUST's magestic at
         <div class="day">
           <h3>Day 1 (November 28th, 2024)</h3>
           <ul>
-            <li><strong>Song Association (1000 – 1300 hrs.)</strong> - Teams will compete in a fun, word-based song game to engage the audience.
-</li>
+            <li><strong>Song Association (1000 – 1300 hrs.)</strong> - Teams will compete in a fun, word-based song game to engage the audience.</li>
             <li><strong>Eastern Singing Competition (1300 – 1700 hrs.)</strong> - A showcase of vocal talent in Eastern music, judged by renowned professionals.</li>
-            <li><strong>Western Singing Competition (1700 – 2100 hrs.)</strong> - Participants will perform Western songs, with expert judges selecting winners.
-</li>
+            <li><strong>Western Singing Competition (1700 – 2100 hrs.)</strong> - Participants will perform Western songs, with expert judges selecting winners.</li>
           </ul>
         </div>
         <div class="day">
           <h3>Day 2 (November 29th, 2024)</h3>
           <ul>
-            <li><strong>Instrumental Competition (1000 – 1200 hrs.)</strong> - A platform for musicians to perform solo pieces on their favourite songs.
-</li>
+            <li><strong>Instrumental Competition (1000 – 1200 hrs.)</strong> - A platform for musicians to perform solo pieces on their favourite songs.</li>
             <li><strong>Battle of the Bands x Rave (1500 – 2100 hrs.)</strong> - The biggest event of the festival featuring 15 university bands, culminating in a final round with a grand prize for the winner, followed by a closing rave.</li>
           </ul>
         </div>
@@ -202,7 +200,7 @@ export default {
   name: "App",
   data() {
     return {
-    logoImage: require('@/assets/logoNMF.png'),
+      logoImage: require('@/assets/logoNMF.png'),
       days: 0,
       hours: 0,
       minutes: 0,
@@ -211,23 +209,23 @@ export default {
       menuActive: false,
       // Carousel Data
       images: [
-      {
-        url: require('@/assets/nmf1.png'),
-        text: 'دل چھو لینے والی دھنیں'
-      },
-      {
-        url: require('@/assets/nmf3.png'),
-        text: 'آواز کی جادوگری'
-      },
-      {
-        url: require('@/assets/nmf4.png'),
-        text: 'دھڑکنوں کی تال پر'
-      },
-      {
-        url: require('@/assets/nmf5.png'),
-        text: 'موسیقی کی دنیا میں خوش آمدید'
-      }
-    ],
+        {
+          url: require('@/assets/nmf1.png'),
+          text: 'دل چھو لینے والی دھنیں'
+        },
+        {
+          url: require('@/assets/nmf3.png'),
+          text: 'آواز کی جادوگری'
+        },
+        {
+          url: require('@/assets/nmf4.png'),
+          text: 'دھڑکنوں کی تال پر'
+        },
+        {
+          url: require('@/assets/nmf5.png'),
+          text: 'موسیقی کی دنیا میں خوش آمدید'
+        }
+      ],
 
       currentImage: 0,
       // Newsletter Data
@@ -375,14 +373,31 @@ body {
 }
 
 .logo {
-  color: #ff6f61;
-  font-weight: 700;
+  display: flex;
+  align-items: center;
 }
-.logo img {
+
+.logo-image {
   width: 20rem; /* Adjust to desired width */
   height: auto; /* Keeps the aspect ratio */
 }
 
+.logo-text {
+  display: none; /* Hidden by default */
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #ff6f61;
+}
+
+/* Show Logo Text and Hide Image on Small Screens */
+@media (max-width: 768px) {
+  .logo-image {
+    display: none;
+  }
+  .logo-text {
+    display: block;
+  }
+}
 
 .nav-links {
   display: flex;
@@ -584,6 +599,7 @@ body {
   gap: 2rem;
   margin-top: 2rem;
   animation: fadeInUp 3s forwards;
+  flex-wrap: wrap; /* Allow items to wrap to the next line */
 }
 
 @keyframes fadeInUp {
@@ -611,6 +627,38 @@ body {
 
 .countdown p {
   font-size: calc(0.8rem + 0.3vw);
+}
+
+/* Responsive Adjustments for Countdown */
+@media (max-width: 768px) {
+  .countdown {
+    gap: 1rem;
+  }
+
+  .countdown div {
+    padding: 0.75rem 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .countdown {
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  .countdown div {
+    width: 80%;
+    padding: 0.5rem 1rem;
+  }
+
+  .countdown span {
+    font-size: 1.5rem;
+  }
+
+  .countdown p {
+    font-size: 0.9rem;
+  }
 }
 
 /* Why Join Section */
@@ -1041,6 +1089,9 @@ footer {
 }
 
 @media (max-width: 768px) {
+  .none-sm{
+    display: none;
+  }
   #hero-heading{
     padding-top: 6rem;
   }
@@ -1114,9 +1165,10 @@ footer {
   }
 }
 
-
-
 @media (max-width: 480px) {
+  .none-sm{
+    display: none;
+  }
   .hero h1 {
     font-size: calc(1.8rem + 2vw);
   }
