@@ -5,7 +5,8 @@
       <div class="nav container">
         <div class="logo">
           <!-- Logo Image -->
-          <img :src="logoImage" alt="NMFF Logo" class="logo-image" />
+          <!-- <img src="@\assets\nmf-7.png" alt="NMFF Logo" class="logo-image" /> -->
+          <img src="@\assets\logoNMF.png" alt="NMFF Logo" class="logo-image2" />
           <!-- Logo Text -->
           <span class="logo-text">NMF</span>
         </div>
@@ -14,7 +15,7 @@
           <a href="#home" @click="scrollToSection('home')">Home</a>
           <a href="#schedule" @click="scrollToSection('schedule')">Event Schedule</a>
           <a href="#participation" @click="scrollToSection('participation')">Participate</a>
-          <a href="#registration" @click="scrollToSection('registration')">Volunteer Registration</a>
+          <a href="#registration" @click="scrollToSection('registration')">Ambassador Registration</a>
           <a href="#contact" @click="scrollToSection('contact')">Contact Us</a>
         </div>
         <div class="menu-toggle" :class="{ 'active': menuActive }" @click="toggleMenu">
@@ -28,12 +29,13 @@
     <!-- Hero Section -->
     <section class="hero" id="home">
       <div class="overlay">
+        <img src="@\assets\nmf-7(1).png" alt="NMFF Logo" class="logo-image" />
         <h1 id="hero-heading">دل کی دھڑکنوں کو <span class="orange">موسیقی</span> کے ساتھ ملائیں</h1>
         <h2>National Music Festival 2.0</h2>
         <p>NUST, H-12, Islamabad | 28-29 November 2024</p>
-        <a href="https://docs.google.com/forms/d/e/1FAIpQLSewJKQbnhNKDRAmlVwEbYqJF4P2pIZWu5h9x2VLkY6AA9A-yw/viewform?usp=sf_link">
+        <!-- <a href="https://docs.google.com/forms/d/e/1FAIpQLSewJKQbnhNKDRAmlVwEbYqJF4P2pIZWu5h9x2VLkY6AA9A-yw/viewform?usp=sf_link">
           <button class="register-btn">Buy Tickets</button>
-        </a>
+        </a> -->
         <div class="countdown">
           <div>
             <span>{{ days }}</span>
@@ -86,7 +88,7 @@
 
     <!-- Gallery Section -->
     <section class="gallery" id="gallery">
-      <h2>موسیقی کے <span class="orange">رنگ</span></h2>
+      <h2 id="hero-heading">موسیقی کے <span class="orange">رنگ</span></h2>
       <h2 style="text-align: center; margin-top: 2rem; font-size: 2rem">Highlights from  <span class="orange">NMF 1.0</span></h2>
       <div class="carousel">
         <div class="carousel-slide" :style="{ backgroundImage: 'url(' + images[currentImage].url + ')' }">
@@ -106,11 +108,11 @@
 
     <!-- Participation Section -->
     <section class="participation" id="participation">
-      <h2>
+      <h2 id="hero-heading">
         <span class="orange">موسیقی کے میلے</span> کا حصہ بنیں
       </h2>
       <p>Are you an artist, musician, or performer looking to showcase your talent?</p>
-      <p>Join us at the National Music Festival 2024!</p>
+      <p>Join us at the <b>National Music Festival 2.0!</b></p>
       <a href="https://docs.google.com/forms/d/e/1FAIpQLSfiUXOCB_fd06rYBHMrMCsT6-BfY7Mje5BNVH8R_CGdlunvWA/viewform?usp=sf_link" target="_blank" class="participate-btn">Participate Now</a>
       <p style="margin-top: 12px;font-size: 14px">Students from any institution in Pakistan can register</p>
     </section>
@@ -140,19 +142,19 @@
     <!-- Registration Section -->
     <section class="registration" id="registration">
       <div class="overlay">
-        <h2>Get your tickets Now</h2>
-        <h3>
+        <h2>Call for Campus Ambassadors</h2>
+        <h3 id="hero-heading">
           <span class="orange">موسیقی کے میلے</span> کا حصہ بنیں
         </h3>
         <p>
-          Become a part of the greatest music festival that NUST has ever witnessed since ON'21. Let's make history together!
+          Bring participants from your campus and get exciting incentives at the greatest Music Festival to be witnessed at NUST.
         </p>
-        <a href="https://docs.google.com/forms/d/e/1FAIpQLSewJKQbnhNKDRAmlVwEbYqJF4P2pIZWu5h9x2VLkY6AA9A-yw/viewform?usp=sf_link" target="_blank">
-          <button class="register-btn">Get tickets</button>
+        <a href="https://docs.google.com/forms/d/e/1FAIpQLSdIXb9a_TrIh9-P-4ypo4dOZwtZ4RMfgVPR0mmzluAIgY36jA/viewform?usp=sf_link" target="_blank">
+          <button class="register-btn">Ambassador Registration</button>
         </a>
-        <p style="margin-top: 12px;font-size: 14px">
+        <!-- <p style="margin-top: 12px;font-size: 14px">
           Only NUSTians are allowed!
-        </p>
+        </p> -->
       </div>
     </section>
 
@@ -163,10 +165,10 @@
           <h2>National Music Festival</h2>
           <p>Bringing together music lovers from all over the country.</p>
           <ul class="social-icons">
-            <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
-            <li><a href="#"><i class="fab fa-twitter"></i></a></li>
-            <li><a href="#"><i class="fab fa-instagram"></i></a></li>
-            <li><a href="#"><i class="fab fa-youtube"></i></a></li>
+            <li><a href="https://www.instagram.com/nationalmusicfestival2024/?hl=en"><i class="fab fa-instagram">  National Music Festival</i></a></li>
+          </ul>
+          <ul class="social-icons">
+            <li><a href="https://www.instagram.com/nustmusicsociety/"><i class="fab fa-instagram">  NUST Music Society</i></a></li>
           </ul>
         </div>
         <div class="footer-links">
@@ -175,7 +177,7 @@
             <li><a href="#" @click.prevent="scrollToSection('home')">Home</a></li>
             <li><a href="#" @click.prevent="scrollToSection('schedule')">Event Schedule</a></li>
             <li><a href="#" @click.prevent="scrollToSection('participation')">Participate</a></li>
-            <li><a href="#" @click.prevent="scrollToSection('registration')">Volunteer Registration</a></li>
+            <li><a href="#" @click.prevent="scrollToSection('registration')">Ambassador</a></li>
             <li><a href="#" @click.prevent="scrollToSection('contact')">Contact Us</a></li>
           </ul>
         </div>
@@ -189,7 +191,7 @@
         </div>
       </div>
       <div class="footer-bottom">
-        <p>© 2024 National Music Festival. All rights reserved.</p>
+        <p>© National Music Festival 2.0. All rights reserved.</p>
       </div>
     </footer>
   </div>
@@ -382,6 +384,11 @@ body {
   height: auto; /* Keeps the aspect ratio */
 }
 
+.logo-image2 {
+  width: 20rem; /* Adjust to desired width */
+  height: auto; /* Keeps the aspect ratio */
+}
+
 .logo-text {
   display: none; /* Hidden by default */
   font-size: 1.5rem;
@@ -408,7 +415,7 @@ body {
   color: #333;
   margin-left: 1.5rem;
   text-decoration: none;
-  font-size: 1rem;
+  font-size: 1.2rem;
   position: relative;
   overflow: hidden;
 }
@@ -993,7 +1000,7 @@ footer {
 
 .social-icons li a {
   color: #fff;
-  font-size: calc(1.2rem + 0.3vw);
+  font-size: calc(1.0rem + 0.1vw);
   transition: color 0.3s;
 }
 
@@ -1241,4 +1248,15 @@ footer {
     font-size: calc(0.8rem + 0.3vw);
   }
 }
+@font-face {
+  font-family: 'YourCustomFont';
+  src: url('@/assets/Jameel Noori Nastaleeq Kasheeda.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+/* Apply custom font to the hero heading */
+#hero-heading {
+  font-family: 'YourCustomFont', sans-serif;
+}
+
 </style>
