@@ -6,7 +6,7 @@
         <div class="logo">
           <!-- Logo Image -->
           <!-- <img src="@\assets\nmf-7.png" alt="NMFF Logo" class="logo-image" /> -->
-          <img src="@\assets\logoNMF.png" alt="NMFF Logo" class="logo-image2" />
+          <img src="@\assets\logoNMF.png" alt="NMFF Logo" class="logo-image" />
           <!-- Logo Text -->
           <span class="logo-text">NMF</span>
         </div>
