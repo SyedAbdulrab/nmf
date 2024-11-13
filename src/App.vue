@@ -133,7 +133,7 @@
           <h3>Day 2 (November 29th, 2024)</h3>
           <ul>
             <li><strong>Instrumental Competition (1000 – 1200 hrs.)</strong> - A platform for musicians to perform solo pieces on their favourite songs.</li>
-            <li><strong>Battle of the Bands x Rave (1500 – 2100 hrs.)</strong> - The biggest event of the festival featuring 15 university bands, culminating in a final round with a grand prize for the winner, followed by a closing rave.</li>
+            <li><strong>Battle of the Bands  (1500 – 2100 hrs.)</strong> - The biggest event of the festival featuring 15 university bands, culminating in a final round with a grand prize for the winner</li>
           </ul>
         </div>
       </div>
